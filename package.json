@@ -1,0 +1,23 @@
+{
+  "name": "saj-al-arab-pos",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=@saj/backend\" \"npm run dev --workspace=@saj/frontend\"",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "db:migrate": "npm run db:migrate --workspace=@saj/backend",
+    "db:seed": "npm run db:seed --workspace=@saj/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
